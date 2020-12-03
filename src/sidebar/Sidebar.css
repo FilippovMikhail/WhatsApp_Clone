@@ -1,0 +1,55 @@
+.sidebar {
+    flex: 0.35; /*какое количество свободного пространства внутри гибкого контейнера должен занимать элемент*/
+}
+
+.sidebar__header {
+    /*ВАЖНО! Т.к. app__body уже имеет в себе display: flex, то мы не будем занимать всю ширину уонтейнера. А только необходимую часть. И justify-content тут просто так не будет работать!*/
+    display: flex; /*гибкий*/
+    justify-content: space-between; /*элементы равномерно распределяются в строке*/
+    padding: 20px; /*Отступ 20px*/
+    border-right: 1px solid lightgray; /*Боковая линия справа*/
+}
+
+.sidebar__headerRight {
+    display: flex; /*гибкий*/
+    align-items: center; /*Выравниваем элементы по центру*/
+    justify-content: space-between; /*элементы равномерно распределяются в строке*/
+    min-width: 10vw /*Минимальная ширина*/;
+}
+
+.sidebar__headerRight > .MuiButtonBase-root {
+    margin-right: 2vw; /*Отступ правый = 2 от ширины*/
+    font-size: 24px !important; /*Размер переопределяем от базового размера MaterialUI*/
+}
+
+.sidebar__search {
+    display: flex; /*гибкий*/
+    align-items: center; /*Выравниваем элементы по центру*/
+    background-color: #f6f6f6; /*Цвет фона*/
+    height: 20px; /*Высота*/
+    padding: 20px; /*Отступ*/
+}
+
+.sidebar__searchContainer {
+    display: flex; /*гибкий*/
+    align-items: center; /*Выравниваем элементы по центру*/
+    background-color: white; /*Цвет фона*/
+    width: 100%; /*Ширина на весь уонтейнер*/
+    height: 35px; /*Высота*/
+    border-radius: 20px; /*Радиус границ (закругленые углы)*/
+}
+
+.sidebar__searchContainer > input {
+    border: none; /*Убираем границы у поля input*/
+    margin-left: 10px; /*Отсуп слева*/
+}
+
+.sidebar__searchContainer > .MuiSvgIcon-root {
+    color: gray; /*Цвет*/
+    padding: 10px; /*Отступ*/
+}
+
+.sidebar__chats {
+    background-color: white;
+    overflow: scroll; /*При переполнении показывать скрол*/
+}
